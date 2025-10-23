@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Churn Prediction</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Customer Churn Prediction</h1>
+    <form action="/predict" method="post">
+      <input type="text" name="tenure" placeholder="Tenure (months)" required>
+      <input type="text" name="MonthlyCharges" placeholder="Monthly Charges" required>
+      <input type="text" name="TotalCharges" placeholder="Total Charges" required>
+      <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+      <p class="result">{{ prediction_text }}</p>
+    {% endif %}
+  </div>
+</body>
+</html>
